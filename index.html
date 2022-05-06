@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TINDRUM</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body onload="popupalert()">
+    <span class="popuptext" id="myPopup">
+    <span>Hip Pan-Asian cafe chain serving Indian curries, Chinese noodles, teriyaki tacos & more.</span>
+    </br>
+    <button onclick="closeAlert()">OK</button>
+    </span>
+    <div class="menusection">
+        <div class="location"> 410 Peachtree Pkwy Cumming GA 30041 (678) 965-5915 </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">TINDRUM</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="linkcolor" href="menu.html"> MENUS</a></li>
+                        <li><a class="linkcolor" href="#"> OUR STORY</a></li>
+                        <li><a class="linkcolor" href="#"> EVENTS</a></li>
+                        <li><a class="linkcolor" href="#"> CONTACT</a></li>
+                        <li><a class="linkcolor" href="#"> GIFT CARDS</a></li>
+                        <li><a class="reserve" href="#"><button class="btn btn-primary">RESERVATIONS</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="mainpicture">
+
+        <div id="myCarousel" class="carousel" data-ride="carousel">
+            <!-- dots on the carousel -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for each image -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-fit" src="img/moss-wall.jpeg" alt="moss-wall">
+                </div>
+
+                <div class="item">
+                    <img class="img-fit" src="img/flower.jpg" alt="flower">
+                </div>
+
+                <div class="item">
+                    <img class="img-fit" src="img/bread.jpeg" alt="bread">
+                </div>
+
+                <div class="item">
+                    <img class="img-fit" src="img/spaghetti.jpg" alt="spaghetti">
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="timings">
+        <div class="booking"> Reservarions </div>
+        <p>Wednesday | Thursday | Sunday : 5.30 - 9.30PM</p>
+        <p> Friday & Saturday : 5.00 - 10.00 pm </p>
+        <p>Sunday Lunch : 12.30 - 1.30 pm </p>
+        <p>Closed Monday & Tuesday</p>
+    </div>
+
+    <div class="container signup" id="signupid">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Email Signup
+            </div>
+            <div class="panel-body">
+                <form action="http://localhost:8900/employee" method="POST">
+                    <div class="form-group" id="fdiv">
+                        <label class="control-label" for="firstname">First Name</label>
+                        <input class="form-control" name="fname" id="firstname" placeholder="First Name" onblur="validateFname()" />
+                        <p id="fout"></p>
+                    </div>
+                    <div class="form-group" id="ldiv">
+                        <label class="control-label" for="lasttname">Last Name</label>
+                        <input class="form-control" name="lname" id="lastname" placeholder="Last Name" onblur="validateLname()" />
+                        <p id="lout"></p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email</label>
+                                <input class="form-control" name="email" id="email" placeholder="a@a.com" oninput="validateEmail()" />
+                                <p id="eout"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input class="form-control" name="password" id="password" type="password" oninput="validatePassword()" />
+                                <span class="glyphicon glyphicon-eye-open" onclick="showPassword()">
+                                </span>
+                            </div>
+                            <p id="pout"></p>
+                            <div id="ppout"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="password">Confirm Password</label>
+                                <input class="form-control" name="cpassword" id="cpassword" type="password" oninput="validateCPassword()" value="12345678" />
+                            </div>
+                            <p id="cpout"></p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Sumbit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="socialmedia">
+        <div class="fb">
+            <a href="#" class="fa fa-facebook fa-1x"></a>
+        </div>
+        <div class="twitter">
+            <a href="#" class="fa fa-twitter"></a>
+        </div>
+        <div class="insta">
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
+        <ul class="footerlist">
+            <li><a href="#"> CAREERS</a></li>
+            <li><a href="#"> BUZZ</a></li>
+            <li><a href="javascript:void(0)" onclick="showemailpage()"> EMAIL SIGNUP</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
